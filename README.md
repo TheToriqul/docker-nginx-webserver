@@ -149,24 +149,61 @@ No additional configuration is needed for basic usage.
 <summary>View Usage Details</summary>
 
 ### Basic Usage
-1. After running the container, open a web browser and go to `http://localhost:8080`
+1. After running the container, open a web browser and go to `http://localhost:80`
 2. You should see the default NGINX welcome page or your custom HTML content
+
+### Verifying the NGINX Server
+To verify the container is running:
+```bash
+docker ps
+```
+This command lists all running containers. You should see **nginx-server** listed.
+
+To verify that the NGINX server is serving your content, use:
+```bash
+curl http://localhost:80
+```
+You should see the following output (or your custom HTML content):
+```html
+Your custom HTML content
+```
 
 ### Modifying Content
 1. Edit the `index.html` file in the project directory
 2. Rebuild the Docker image and run a new container to see changes
 
-### Stopping the Container
+### Managing the NGINX Container
+
+**Stopping the Container**
+To stop the running NGINX container:
 ```bash
 docker stop nginx-server
 ```
 
-### Restarting the Container
+**Starting the Container**
+To start the stopped container:
 ```bash
 docker start nginx-server
 ```
 
+**Viewing Container Logs**
+To view the logs of the NGINX container:
+```bash
+docker logs nginx-server
+```
+
+**Removing the Container**
+To remove the NGINX container, first ensure it is stopped:
+```bash
+docker stop nginx-server
+```
+Then remove the container:
+```bash
+docker rm nginx-server
+```
+
 </details>
+
 
 ## 🛠 Development
 
@@ -180,15 +217,21 @@ docker build -t my-nginx .
 ```
 
 ### Testing
-Test the setup by accessing `http://localhost:8080` in a web browser after starting the container.
+Test the setup by accessing `http://localhost:80` in a web browser after starting the container.
+
+You can also use the `curl` command as mentioned in the Usage Guide to verify the server's response.
 
 ### Deployment
 For local deployment, use the run command mentioned in the setup steps.
+
+### Container Management
+Use the commands listed in the Usage Guide for starting, stopping, viewing logs, and removing the container during your development process.
 
 </details>
 
 ## 📝 Documentation
 
+- [Poridhi Labs](https://poridhi.io/)
 - [Docker Documentation](https://docs.docker.com/)
 - [NGINX Documentation](https://nginx.org/en/docs/)
 
@@ -205,7 +248,7 @@ For local deployment, use the run command mentioned in the setup steps.
 
 ## 👏 Acknowledgments
 
-I'd like to thank the Docker and NGINX communities for their extensive documentation and tutorials which greatly aided my learning process.
+I'd like to thank the Poridhi Labs, Docker and NGINX communities for their extensive documentation and tutorials which greatly aided my learning process.
 
 ---
 
