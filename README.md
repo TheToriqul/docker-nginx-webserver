@@ -31,22 +31,27 @@ graph TD
 ## ⭐ Key Features
 
 1. Dockerized NGINX Server
+
    - NGINX running in an isolated container
    - Easy to deploy and manage
 
 2. Custom Web Content
+
    - Serving a simple HTML file
    - Easily modifiable for learning purposes
 
 3. Port Mapping
+
    - Container port exposed to host
    - Accessible via localhost
 
 4. Volume Mounting
+
    - Local directory mounted for persistent storage
    - Allows for easy content updates
 
 5. Dockerfile
+
    - Defines the container environment
    - Ensures consistency across deployments
 
@@ -59,19 +64,23 @@ graph TD
 ### Technical Skills I've Gained:
 
 1. Docker Basics
+
    - Understanding container concepts
    - Writing and using Dockerfiles
    - Managing Docker images and containers
 
 2. NGINX Configuration
+
    - Basic NGINX setup in a containerized environment
    - Serving static content with NGINX
 
 3. Networking in Docker
+
    - Port mapping between container and host
    - Understanding Docker networking basics
 
 4. Volume Management
+
    - Using Docker volumes for persistent data
    - Mounting local directories to containers
 
@@ -81,18 +90,22 @@ graph TD
 ### Professional Growth:
 
 1. DevOps Practices
+
    - Introduction to Infrastructure as Code concepts
    - Understanding the benefits of containerization
 
 2. Documentation
+
    - Writing clear README files
    - Documenting setup and usage instructions
 
 3. Version Control
+
    - Using Git for managing project files
    - Creating and maintaining a GitHub repository
 
 4. Problem-solving
+
    - Troubleshooting container and networking issues
    - Debugging configuration problems
 
@@ -119,17 +132,21 @@ graph TD
 <summary>View Installation Details</summary>
 
 ### Prerequisites
+
 - Docker installed on your system
 - Git for cloning the repository
 
 ### Setup Steps
+
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/TheToriqul/docker-nginx-webserver.git
    cd docker-nginx-webserver
    ```
 
 2. Build the Docker image:
+
    ```bash
    docker build -t my-nginx .
    ```
@@ -140,7 +157,38 @@ graph TD
    ```
 
 ### Configuration
+
 No additional configuration is needed for basic usage.
+
+</details>
+
+## 🛠 Development
+
+<details>
+<summary>View Development Details</summary>
+
+### Build Process
+
+To rebuild the image after making changes:
+
+```bash
+docker build -t my-nginx .
+```
+
+### Testing
+
+Test the setup by accessing `http://localhost:80` in a web browser after starting the container.
+
+You can also use the `curl` command as mentioned in the Usage Guide to verify the server's response.
+
+### Deployment
+
+For local deployment, use the run command mentioned in the setup steps.
+
+### Container Management
+
+Use the commands listed in the Usage Guide for starting, stopping, viewing logs, and removing the container during your development process.
+
 </details>
 
 ## 📖 Usage Guide
@@ -149,26 +197,34 @@ No additional configuration is needed for basic usage.
 <summary>View Usage Details</summary>
 
 ### Basic Usage
+
 1. After running the container, open a web browser and go to `http://localhost:80`
 2. You should see the default NGINX welcome page or your custom HTML content
 
 ### Verifying the NGINX Server
+
 To verify the container is running:
+
 ```bash
 docker ps
 ```
+
 This command lists all running containers. You should see **nginx-server** listed.
 
 To verify that the NGINX server is serving your content, use:
+
 ```bash
 curl http://localhost:80
 ```
+
 You should see the following output (or your custom HTML content):
+
 ```html
 Your custom HTML content
 ```
 
 ### Modifying Content
+
 1. Edit the `index.html` file in the project directory
 2. Rebuild the Docker image and run a new container to see changes
 
@@ -176,56 +232,37 @@ Your custom HTML content
 
 **Stopping the Container**
 To stop the running NGINX container:
+
 ```bash
 docker stop nginx-server
 ```
 
 **Starting the Container**
 To start the stopped container:
+
 ```bash
 docker start nginx-server
 ```
 
 **Viewing Container Logs**
 To view the logs of the NGINX container:
+
 ```bash
 docker logs nginx-server
 ```
 
 **Removing the Container**
 To remove the NGINX container, first ensure it is stopped:
+
 ```bash
 docker stop nginx-server
 ```
+
 Then remove the container:
+
 ```bash
 docker rm nginx-server
 ```
-
-</details>
-
-
-## 🛠 Development
-
-<details>
-<summary>View Development Details</summary>
-
-### Build Process
-To rebuild the image after making changes:
-```bash
-docker build -t my-nginx .
-```
-
-### Testing
-Test the setup by accessing `http://localhost:80` in a web browser after starting the container.
-
-You can also use the `curl` command as mentioned in the Usage Guide to verify the server's response.
-
-### Deployment
-For local deployment, use the run command mentioned in the setup steps.
-
-### Container Management
-Use the commands listed in the Usage Guide for starting, stopping, viewing logs, and removing the container during your development process.
 
 </details>
 
@@ -238,7 +275,7 @@ Use the commands listed in the Usage Guide for starting, stopping, viewing logs,
 ## 📫 Contact
 
 - 📧 Email: toriqul.int@gmail.com
-- 📱 Phone: 
+- 📱 Phone:
   - Singapore: +65 8936 7705
   - Bangladesh: +8801765 939006
 
